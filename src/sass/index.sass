@@ -88,7 +88,7 @@ $calendar-date-padding: .1rem 0 !default
                 text-align: left
 
             .datetimepicker-selection-hour
-                font-size: $size-4
+                font-size: $size-5
                 font-weight: $weight-lightest
                 flex: 1
                 justify-content: center
@@ -366,8 +366,18 @@ $calendar-date-padding: .1rem 0 !default
 =datetimepicker
     background: $white
     border-radius: $calendar-border-radius
-    max-width: 320px
-    z-index: 1
+    width: 320px
+    position: absolute
+    z-index: 5
+    &.datetimepicker-above
+        bottom: 100%
+    &.datetimepicker-below
+        top: 100%
+    &.datetimepicker-left
+        left: 0%
+    &.datetimepicker-right
+        right: 0%
+
     +datetimepicker-header
     +datepicker-nav
     +datepicker-body
