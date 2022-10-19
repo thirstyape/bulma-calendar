@@ -582,6 +582,12 @@ $calendar-date-padding: .1rem 0 !default
                                         border-color: $color
                                         color: $color
 
+.datetimepicker-parent
+  &:hover
+    input:not([disabled]):not([readonly]) + .datetimepicker.is-hoverable,
+    input:not([disabled]):not([readonly]) + span + .datetimepicker.is-hoverable
+      display: block
+
 .datetimepicker-wrapper.modal
     .datetimepicker
         display: block
