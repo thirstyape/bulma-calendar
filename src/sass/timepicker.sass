@@ -3,8 +3,6 @@
         display: flex
         flex-direction: row
         justify-content: center
-        // min-width: 200px
-        // max-width: 200px
         margin: auto
 
         .timepicker-start,
@@ -12,9 +10,10 @@
             display: flex
             flex-direction: row
             flex: 1 50%
-            justify-content: center
+            justify-content: space-evenly
             position: relative
 
+            .timepicker-days,
             .timepicker-hours,
             .timepicker-minutes
                 display: flex
@@ -26,19 +25,17 @@
                     color: $primary
                     text-align: center
                     overflow: hidden
-                    font-size: 2rem
+                    font-size: $size-3
                     font-weight: $weight-normal
 
                     &.is-input
                         .timepicker-input-number
                             visibility: hidden
                             opacity: 0
-                            transition: opacity 100ms ease-in
 
                         input
                             visibility: visible
                             opacity: 1
-                            transition: opacity 100ms ease-in
 
                     input
                         width: 4rem
@@ -50,8 +47,6 @@
                         outline: none
                         border: none
                         opacity: 0
-                        transition: opacity 100ms ease-in
-
 
             .timepicker-input-number
                 position: absolute
@@ -62,28 +57,7 @@
                 bottom: 0
                 visibility: visible
                 opacity: 1
-                transition: opacity 1000ms ease-in
-                font-weight: 300
-
-                &.is-increment-hide
-                    opacity: 0
-                    transform: translateY(-50px)
-                    animation: increment-prev 100ms ease-in
-
-                &.is-increment-visible
-                    opacity: 1
-                    transform: translateY(0)
-                    animation: increment-next 100ms ease-out
-
-                &.is-decrement-hide
-                    opacity: 0
-                    transform: translateY(50px)
-                    animation: decrement-prev 100ms ease-in
-
-                &.is-decrement-visible
-                    opacity: 1
-                    transform: translateY(0)
-                    animation: decrement-next 100ms ease-out
+                font-weight: $weight-light
 
         .timepicker-end
             margin-left: 1rem
@@ -105,12 +79,15 @@
             font-size: 1rem
             line-height: 1rem
             display: block
-            color: #ADBCDA
+            color: $grey
             text-align: center
             margin: 1rem 0 0
             font-size: 1rem
             padding: .5rem
             width: 100%
+            -webkit-user-select: none
+            -moz-user-select: none
+            -ms-user-select: none
             user-select: none
 
             &:hover
@@ -145,23 +122,3 @@
             .timepicker-input-number,
             .timepicker-time-divider
                 color: $color !important
-
-@keyframes decrement-prev
-    from
-        opacity: 1
-        transform: translateY(0)
-
-@keyframes decrement-next
-    from
-        opacity: 0
-        transform: translateY(-50px)
-
-@keyframes increment-prev
-    from
-        opacity: 1
-        transform: translateY(0)
-
-@keyframes increment-next
-    from
-        opacity: 0
-        transform: translateY(50px)
