@@ -4,7 +4,7 @@ $calendar-selection-background-color: $primary !default
 $calendar-days-background-color: transparent !default
 $calendar-selection-days-color: $grey-light !default
 $calendar-date-color: $text !default
-$calendar-date-hover-background-color: $white !default
+$calendar-date-hover-background-color: $scheme-main !default
 $calendar-date-hover-border: .1rem solid $primary !default
 $calendar-date-hover-border: $primary !default
 $calendar-date-highlighted-border: .1rem solid $primary !default
@@ -29,6 +29,8 @@ $calendar-date-padding: .1rem 0 !default
         padding: .5rem 1rem
         font-size: $size-6
         box-shadow: 0 .2rem .2rem -.2rem rgba(10, 10, 10, .1)
+        background-color: $scheme-main-ter
+        color: $text
 
         &.is-date-only
             flex-direction: row
@@ -144,6 +146,16 @@ $calendar-date-padding: .1rem 0 !default
         padding: $calendar-selection-nav-padding
         flex-direction: row
 
+        .button
+            background-color: $scheme-main-ter
+            color: $text
+            border-color: $scheme-main
+
+            &:hover
+                background: $calendar-date-hover-background-color
+                border-color: $scheme-main-ter
+                color: findColorInvert($calendar-date-hover-background-color)
+
         .datepicker-nav-month-year
             flex-direction: row
             display: flex
@@ -217,7 +229,7 @@ $calendar-date-padding: .1rem 0 !default
                 color: $grey
 
                 .datepicker-date
-                    background: $white-ter
+                    background: $scheme-main-ter
                     display: flex
                     justify-content: center
                     flex: 14.28571%
@@ -364,7 +376,7 @@ $calendar-date-padding: .1rem 0 !default
             text-decoration: none !important
 
 =datetimepicker
-    background: $white
+    background-color: $scheme-main
     border-radius: $calendar-border-radius
     width: 320px
     position: absolute
